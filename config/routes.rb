@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  get 'chat_rooms/index'
+
   get 'products/index'
 
   get 'products/show'
