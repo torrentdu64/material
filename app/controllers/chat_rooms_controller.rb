@@ -1,9 +1,13 @@
 class ChatRoomsController < ApplicationController
-  def index
 
+  skip_before_action :authenticate_user!, only: [:show]
+
+
+  def index
   end
 
   def show
-    @chat_room = ChatRoom.includes(messages: :product).find(params[:id])
+     @chat_room = ChatRoom.includes(messages: :user).find(params[:id])
   end
+
 end
