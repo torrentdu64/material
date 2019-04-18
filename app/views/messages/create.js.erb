@@ -1,0 +1,14 @@
+<% if @message.errors.any? %>
+  // handle validation errors later
+<% else %>
+// event listener on click
+// even.preventDefault()
+// take message
+//
+  const messagesContainer = document.querySelector('.messages');
+  messagesContainer.insertAdjacentHTML('beforeend', '<%= j render "message", message: @message, user_is_messages_author: true %>');
+  const input = document.querySelector('#message_content');
+  input.value = '';
+  input.blur();
+  // scrollLastMessageIntoView();
+<% end %>
